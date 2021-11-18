@@ -1,0 +1,530 @@
+/**
+ * fil: css/style.css
+ **/
+/* Variabler: genbruges og gør designvalg enkle */
+:root {
+  /* farver */
+  --rod: #82171e;
+  --graa: #f1f2f2;
+  --cta: #c03d2e;
+  --cta2: #d12f22;
+  --info: #a31916;
+  --cta3: #CF2530;
+
+  /* fonte */
+
+
+}
+
+/* Mobilfirst */
+/* Wrap der skal være Grid-layout */
+
+.wrap{
+  margin:0;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-areas:
+    "nav"
+    "bigpic"
+    "nyheder"
+    "cardflex"
+    "footer";
+}
+
+ul.menu{display: none}
+
+
+.navbar {
+  background-color: rgb(255,255,255,0.3);
+  position: sticky;
+  top: 0;
+  grid-area: nav;
+  display:grid;
+    grid-template-areas:
+    "burger logo ikoner";
+  grid-template-columns: 2em calc(100% - 2em - 5em) 5em;
+  margin: 0em 0.2em 0em 0.2em;
+  z-index: 10000;
+}
+
+/* burger dropdown knap
+
+burger ikonet */
+.burger {
+  color: var(--rod);
+  border: none;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+
+  }
+
+  .dropdownnav{
+    font-size: 2em;
+    margin: 0.2em;
+    color: var(--rod)
+  }
+
+/* navbar -  boks */
+.navibar {
+  display: none;
+  flex-direction: column;
+  margin: 0em 0em 0em 0em;
+  background-color: #82171e;
+  border: 1px solid black;
+  height: auto;
+  width: 98vw;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+
+/* Usynlig knap */
+.knap2 {
+    position: absolute;
+    top: -9000px;
+}
+
+.knap2:checked ~ .navibar {
+  display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: stretch;
+    min-height: 25vh;
+
+
+}
+
+/* box - content */
+
+
+/* søge funktion */
+
+.search{
+  display: flex;
+  justify-content: center;
+
+}
+input[type=text] {
+  margin: 1em 0.2em 1em 0.2em;
+  height: 1em;
+  width: calc(50% - 0.4em);
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 1.2em;
+  font-size: 1em;
+  padding: 0.6em;
+  text-align: center;
+  background: white;
+
+
+    }
+
+
+/* dropdownmenubar */
+[class^="mere"] {
+  text-align: center;
+    display: none;
+    background: #f1f2f2;
+    margin: -1em 0em -1em -0em;
+    font-size: 1.5em;
+
+  }
+
+[class^="vismere"] {
+  display:block;
+  position: relative;
+
+  }
+
+[class^="vis"] {
+    position: absolute;
+    top: -9000px;
+}
+
+[class^="vis"]:checked ~ [class^="mere"] {
+  display: block;
+
+}
+
+
+/* dropdown layout */
+[class^="show"] {
+  display: flex;
+    justify-content: space-around;
+  color: white;
+  font-size: 2em;
+  padding: 0.2em 0.2em 0.2em 0.2em;
+
+
+}
+.navibar ul {
+  list-style-type: none;
+  padding: 0.6em 0 0.6em 0;
+  margin: 1em 0 1em 0;
+
+}
+.navibar a {
+  object-fit: contain;
+  text-decoration: none;
+  color: black;
+}
+
+
+.logotop{
+  grid-area: logo;
+  margin-left: 20%;
+  margin-top: 0.2em;
+  max-height: 5em;
+
+
+}
+
+#toplogo {
+  width: 200px;
+}
+
+.ikon {
+  grid-area: ikoner;
+  right: 0;
+  top: 0;
+  display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+#poteklub {
+  height: 2em;
+  margin: 0.2em 0.2em 0em 0em;
+}
+#kurv {
+width: 2em;
+
+}
+/* navbar slutter */
+
+
+/* header med big pic starter */
+header {
+  grid-area: bigpic;
+}
+.bigpic {
+  width: 100%;
+  min-height: 320px;
+  opacity: 0.5;
+  background:url('../images/lilygraes600.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  margin-top: -6em;
+}
+
+#pote{
+  z-index: 2;
+  position: absolute;
+  width: 150px;
+  right: 5%;
+  top: 125px;
+}
+
+#blivmedlem {
+  width: 200px;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  margin-left: 1em;
+  top: 3em;
+}
+
+/* bigpic slutter */
+
+
+body{
+  align-content: center;
+  background-color: #f2f2f2;
+}
+
+/* Artikler flex starter her */
+.overskrift {
+  font-size: 1em;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+
+.personlige {
+  background-color: #f2f2f2;
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap:wrap;
+  margin-bottom: 1em;
+}
+
+.tilbud {
+  border: 2px transparent;
+  background-color: white;
+  margin: 0.5em;
+  width: 120px;
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  background: white;
+
+}
+.tilbud h4 {
+  margin: 1em 0.4em 1em 0.4em
+}
+
+.perspic {
+  border: 10px solid white;
+  width: 100px;
+  height: 150px;
+}
+
+.priser {
+  margin: 0;
+  text-decoration: line-through;
+}
+
+.nypris {
+  color: var(--rod);
+}
+
+
+.cta {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em 4em 0.5em 4em;
+  color: white;
+  background: var(--rod);
+  margin-bottom: 1em;
+}
+
+
+
+.footer {
+  bottom:0;
+  grid-area: footer;
+  display: grid;
+    grid-template-areas:
+    "logobund"
+    "kontakt"
+    "some"
+    "info";
+  justify-items: center;
+  text-align: center;
+  background: white;
+  color: var(--rod);
+}
+
+.logobund {
+  grid-area: logobund;
+  width: 30%;
+}
+
+.kontakt{
+  grid-area: kontakt;
+}
+
+.some {
+  grid-area: some;
+}
+
+#facebook {
+  width: 10%
+}
+
+#instagram {
+  width: 10%;
+}
+
+.info {
+  grid-area: info;
+
+}
+
+
+
+
+
+
+/* Widescreen */
+@media screen and (min-width: 800px) {
+
+.navbar {
+  background-color: rgb(255,255,255,0.5);
+  grid-template-areas:
+  "logo nav ikoner";
+  grid-template-columns: 350px calc(100vw - 350px - 200px) 200px
+}
+
+
+
+
+#toplogo {
+  width: 15em;
+}
+
+.logotop{
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.burger{display: none}
+
+
+ul.menu{
+  grid-area: nav;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.menu li {
+  color: #82171e;
+  background: inherit;
+  display: block;
+  float: left;
+  padding: 1em; /* Test på siden */
+  position: relative;
+  text-decoration: none;
+}
+
+
+.menu li a {
+  margin-top: 0.5em;
+  font-size: 30px;
+  color: #82171e;
+}
+
+.menu li:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.dropdown {
+  background: white;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  left: 0;
+  display: none;
+}
+
+.menuitem:hover > ul,
+.menuiten:focus-within > ul
+.dropdown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.menu li ul li {
+  clear: both;
+  width: 100%;
+}
+
+
+#poteklub {
+  height: 3em;
+  margin: 0.2em 0.2em 0em 0em;
+}
+
+#kurv {
+width: 3.4em;
+margin-right: 0.2em;
+}
+
+.bigpic {
+  width: 100%;
+  min-height: 700px;
+  background:url('../images/lilygraes1600.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  margin-top: -5.4em;
+}
+
+#pote{
+  z-index: 2;
+  position: absolute;
+  width: 200px;
+  right: 10%;
+  top: 400px;
+}
+
+#blivmedlem {
+  width: 600px;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  margin-left: 5em;
+  top: 4em;
+}
+
+#blivmedlem h2 {
+  font-size: 60px;
+}
+
+#blivmedlem p{
+  margin-top: -1em;
+  font-size: 40px;
+}
+
+
+.personlige {
+  background-color: #f2f2f2;
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap:wrap;
+  margin-bottom: 1em;
+}
+
+.tilbud {
+
+  width: 300px;
+}
+
+.footer {
+  grid-area: footer;
+  display: grid;
+    grid-template-areas:
+    ". logobund ."
+    "kontakt some info";
+  }
+
+  .logobund {
+    grid-area:logobund;
+  }
+
+
+}
+@media screen and (min-width: 1792px) {
+.bigpic {
+  background:url('../images/lilyskov2500.jpg');
+}
+}
